@@ -1,0 +1,37 @@
+{
+  "id_campanha": null,
+  "tipo_campanha": null,
+  "inicio": null,
+  "fim": null,
+  "ambiente": [],
+  "npb": {
+    "versao": null,
+    "implementacao": null,
+    "origem": null,
+    "sha256_pacote": null,
+    "patches": [],
+    "arquivos_compilacao": [],
+    "registro_compilacao": null,
+    "binarios": []
+  },
+  "scripts": [],
+  "configuracoes_execucao": [
+    {
+      "id_configuracao": null,
+      "benchmark": null,
+      "classe": null,
+      "processos_mpi": null,
+      "parametros_mpi": [],
+      "arquivos_configuracao": [],
+      "distribuicao_por_no": [],
+      "binding": null,
+      "politica_frequencia": null,
+      "id_binario": null
+    }
+  ],
+  "criterios_validacao": null,
+  "inventario_tentativas": null,
+  "arquivos_originais": [],
+  "artefatos_derivados": [],
+  "observacoes": []
+}

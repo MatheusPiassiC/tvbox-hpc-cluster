@@ -1,0 +1,8 @@
+server slots=4
+node1 slots=4
+node2 slots=4
+node3 slots=4
+node4 slots=4
+node5 slots=4
+node6 slots=4
+node7 slots=4
