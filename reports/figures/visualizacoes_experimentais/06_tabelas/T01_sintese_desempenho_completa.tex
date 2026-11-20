@@ -1,0 +1,19 @@
+% Requer booktabs. Inserir com \input dentro de uma tabela centralizada.
+\begingroup\small
+\setlength{\tabcolsep}{2.5pt}%
+\renewcommand{\arraystretch}{1.20}%
+\begin{tabular*}{15.6cm}{@{\extracolsep{\fill}}lrrrrrr@{}}
+\toprule
+\shortstack[l]{Benchmark} & \shortstack[r]{Melhor $p$} & \shortstack[r]{Tempo médio\\mín. (s)} & \shortstack[r]{IC de 95\%\\(s)} & \shortstack[r]{Speedup\\máx. ($\times$)} & \shortstack[r]{Eficiência\\no melhor $p$ (\%)} & \shortstack[r]{Eficiência\\no maior $p$ (\%)} \\
+\midrule
+EP & 32 & 0,936 & [0,922 a 0,950] & 30,193 & 94,35 & 94,35 \\
+IS & 4 & 0,826 & [0,819 a 0,833] & 2,918 & 72,94 & 1,60 \\
+CG & 8 & 3,670 & [3,648 a 3,692] & 4,475 & 55,94 & 10,20 \\
+MG & 32 & 2,444 & [2,421 a 2,467] & 5,189 & 16,21 & 16,21 \\
+FT & 4 & 8,509 & [8,480 a 8,538] & 2,526 & 63,15 & 3,53 \\
+LU & 32 & 28,857 & [28,757 a 28,957] & 6,556 & 20,49 & 20,49 \\
+BT & 25 & 62,725 & [62,496 a 62,954] & 4,735 & 18,94 & 18,94 \\
+SP & 25 & 113,178 & [108,876 a 117,480] & 3,946 & 15,78 & 15,78 \\
+\bottomrule
+\end{tabular*}%
+\endgroup%

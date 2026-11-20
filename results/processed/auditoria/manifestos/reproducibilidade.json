@@ -1,0 +1,41 @@
+{
+  "arquivos_codigo_sha256": {
+    "requirements-auditoria.txt": "0642e99fd935a92be1f8ec3049055995c8a1b1be23e2bf7cb9ee218ee9cf4282",
+    "scripts/auditar_npb.py": "4255fcfb1212b048b88ef78aedd7ec6e75660e172fe582b5d932228f00e9d2f5",
+    "scripts/npb_auditoria/cli.py": "6defae9350da3fdbadc71ce274c128156b3d788576cfedc3423309707241e1b8",
+    "scripts/npb_auditoria/environment.py": "24c7a448cf704ca3559627f4219558ae316c215080f6cfabc95aa0be76af2e69",
+    "scripts/npb_auditoria/exploracao.md": "b1d8c5ddcdad1034e2b667c7a8f867f4a629d8e1a3d89eca4924db7421a5df26",
+    "scripts/npb_auditoria/figures.py": "fb2aa41d44d6e1de93071c3a4bd102f9d195612e9464059ae0b6151b79693c4c",
+    "scripts/npb_auditoria/model.py": "378519e4e1bdb0060c6c5a76519138a336481ee1542483378bd3928bc6d1fbc6",
+    "scripts/npb_auditoria/mpi.py": "f57709a154b7600ef6dabf39011d7484af0bcd93935b8ae847ce80a049d2a662",
+    "scripts/npb_auditoria/output.py": "5a9e09224f9fb59980e28bfc6706aeb32c68e870396ebc77c905c25a3d5ad65d",
+    "scripts/npb_auditoria/parsing.py": "7f914cd014736e9bb9270587188b88cc8351e375f9195032197cd88c24776d0d",
+    "scripts/npb_auditoria/reconcile.py": "06b36596a4cf35f958a6596150a5947be777d117718494807ac0c1de6c420338",
+    "scripts/npb_auditoria/reports.py": "6e0f27b33c21f9c7fae2504c6825024e6fed03f8587b4707b313bc853f4c9677",
+    "scripts/npb_auditoria/statistics.py": "06d47be353a1ad96026a5d02f6fef8127b59a7198eba85e7d0324701f512e3a6",
+    "scripts/npb_auditoria/validation.py": "ecc06b60a6668cf88a1af3da9a41eab1c95c7e621d9ac062a1467347e78cb187",
+    "tests/test_auditoria_npb.py": "656a60a009263e74f4c18ca2c3b4ff2ae4b22bcb808bc6715a765fab33b7d87e"
+  },
+  "codigo_sha256": "7241c839b83bdd0f6ed10cb1ec8def5817fc2a846637d5a498a1769c8adfbb25",
+  "dependencias": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.67.0",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "scipy": "1.18.1",
+    "six": "1.17.0"
+  },
+  "estado_entrada_sha256": "80d73ff10e0c421babf41a26c36f5eec89109ade25c0b563f9d84d67111e1cfe",
+  "intervalo": "t bilateral 95%, ddof=1",
+  "metrica_principal": "Time in seconds",
+  "python": "3.12.3",
+  "quartis": "linear (tipo 7)",
+  "seed_analise": null,
+  "versao_formato": 1
+}

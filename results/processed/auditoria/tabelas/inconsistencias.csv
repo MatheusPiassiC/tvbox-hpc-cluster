@@ -1,0 +1,3 @@
+campanha,id_auditoria,nivel,codigo,detalhe,fontes
+,,alerta,metadados_ambiente_divergentes,"temp_max_c varia entre campanhas: [80, 85].","[""raw/BT/npb_10_BT_A_ambiente.txt:1213"",""raw/CG/npb_3_CG_A_ambiente.txt:1214"",""raw/EP/npb_1_EP_A_ambiente.txt:1214"",""raw/FT/npb_5_FT_A_ambiente.txt:1214"",""raw/IS/npb_2_IS_A_ambiente.txt:1211"",""raw/LU/npb_6_LU_A_ambiente.txt:1214"",""raw/MG/npb_4_MG_A_ambiente.txt:1214"",""raw/SP/npb_9_SP_A_ambiente.txt:1213""]"
+LU/npb_6_LU_A,LU/npb_6_LU_A/6-0017,alerta,aviso_stdout_stderr,"[server:109059] plm:rsh: Warning: setpgid(109081,109081) failed in parent with errno=Permission denied(13)","[""raw/LU/npb_6_LU_A_saidas.txt:3966""]"

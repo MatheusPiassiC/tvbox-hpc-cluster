@@ -1,0 +1,21 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,booktabs,graphicx}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,total={15.6cm,24.7cm},centering]{geometry}
+\pagestyle{empty}
+\begin{document}
+\begin{table}[!ht]
+  \centering
+  \setlength{\belowcaptionskip}{5pt}
+  \caption{Síntese do desempenho por benchmark.}
+  \label{tab:sintese-desempenho}
+  \input{T01_sintese_desempenho_completa.tex}
+  \par\smallskip
+  {\footnotesize\raggedright
+    \textit{Nota.} Melhor $p$ é a configuração de menor tempo médio e o IC de 95\% refere-se a essa média. O maior $p$ avaliado é 25 para BT e SP e 32 para os demais benchmarks.\par}
+\end{table}
+\end{document}

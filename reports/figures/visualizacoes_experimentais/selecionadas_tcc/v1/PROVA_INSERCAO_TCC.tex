@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,booktabs,graphicx}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\usepackage[a4paper,total={15.6cm,24.7cm},centering]{geometry}
+\pagestyle{empty}
+\begin{document}
+\noindent\textbf{A01}\hfill {\small Prova A4 · largura útil de 15,6 cm}\par
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{A01_tempo_medio_8paineis_4x2.pdf}
+  \caption{Tempo médio do NPB por número de processos MPI. Barras de erro representam os ICs bilaterais de 95\% das médias. As escalas verticais são independentes.}
+  \label{fig:a01}
+\end{figure}
+
+\clearpage
+
+\noindent\textbf{C03}\hfill {\small Prova A4 · largura útil de 15,6 cm}\par
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{C03_speedup_8paineis_4x2.pdf}
+  \caption{Speedup em relação à execução com um processo MPI. A linha tracejada representa o speedup ideal $S(p)=p$.}
+  \label{fig:c03}
+\end{figure}
+
+\clearpage
+
+\noindent\textbf{D03}\hfill {\small Prova A4 · largura útil de 15,6 cm}\par
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{D03_eficiencia_8paineis_4x2.pdf}
+  \caption{Eficiência paralela por quantidade de processos MPI. A linha tracejada indica o nível de referência de 100\%.}
+  \label{fig:d03}
+\end{figure}
+
+\clearpage
+
+\noindent\textbf{T01}\hfill {\small Prova A4 · largura útil de 15,6 cm}\par
+\begin{table}[!ht]
+  \centering
+  \setlength{\belowcaptionskip}{5pt}
+  \caption{Síntese do desempenho por benchmark.}
+  \label{tab:sintese-desempenho}
+  \input{T01_sintese_desempenho_completa.tex}
+  \par\smallskip
+  {\footnotesize\raggedright
+    \textit{Nota.} Melhor $p$ é a configuração de menor tempo médio e o IC de 95\% refere-se a essa média. O maior $p$ avaliado é 25 para BT e SP e 32 para os demais benchmarks.\par}
+\end{table}
+
+\clearpage
+
+\noindent\textbf{D03-2x4}\hfill {\small Prova A4 · largura útil de 15,6 cm}\par
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{D03_eficiencia_8paineis_alternativa_2x4.pdf}
+  \caption{Eficiência paralela na disposição 2×4. As escalas e os valores são os mesmos de D03.}
+  \label{fig:d03-2x4}
+\end{figure}
+\end{document}
