@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Os caminhos abaixo têm hashes conferidos na auditoria ou na reprodução.
+/config/mpi/cluster -text
+/results/raw/** -text
+/results/processed/auditoria/** -text
+/scripts/analise/auditoria-npb/** -text
+/reports/figures/visualizacoes_experimentais/** -text
