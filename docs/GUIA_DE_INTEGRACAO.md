@@ -19,7 +19,7 @@ O conjunto de 16 e 17 de novembro de 2026 reúne os registros originais, a audit
 
 ## Informações a extrair do ambiente
 
-Usar primeiro os registros contemporâneos às execuções. Para uma coleta posterior, registrar nó, data e campanha associada, se conhecida. Os comandos abaixo são opções de leitura para executar localmente no nó pertinente, conforme a disponibilidade das ferramentas. Conferir o conteúdo antes de compartilhá-lo.
+Use primeiro os registros da campanha. Em consultas posteriores, registre o nó, a data e a campanha associada, quando conhecida.
 
 | Prioridade | Onde coletar | O que fornecer e por quê | Destino | Conferência |
 | --- | --- | --- | --- | --- |
@@ -28,24 +28,7 @@ Usar primeiro os registros contemporâneos às execuções. Para uma coleta post
 | Essencial | Nós computacionais e nó `nfs` | Inventário de versões, hardware e frequência, para caracterizar o ambiente | [hardware](hardware.md), [software](ambiente-software.md) e [metadata](../metadata/) | Verificar divergências entre nós e distinguir observações atuais das históricas |
 | Essencial | Configurações nos nós e no `nfs` | Montagens e exportações NFS, rede, SSH e arquivos de política de frequência e permissões, para reconstruir os serviços | [config/sistema](../config/sistema/) | Conferir protocolo, opções, caminhos e preservar originais em acervo restrito quando sensíveis |
 
-```sh
-date -Iseconds
-hostname
-uname -a
-cat /etc/os-release
-lscpu
-cat /proc/meminfo
-lsblk
-ip -br link
-mpirun --version
-ompi_info --all
-gcc --version
-gfortran --version
-ssh -V
-findmnt -t nfs,nfs4
-```
-
-No servidor NFS, consultar as exportações com `exportfs -v` se houver permissão de leitura. Nos nós computacionais, consultar a política de frequência, quando exposta pelo kernel, com o trecho a seguir.
+Consulte as montagens NFS com `findmnt -t nfs,nfs4` nos clientes e as exportações com `exportfs -v` no servidor, quando houver permissão de leitura. Nos nós computacionais, consulte o governador e o limite de frequência de cada política exposta pelo kernel.
 
 ```sh
 for politica in /sys/devices/system/cpu/cpufreq/policy*; do
@@ -55,4 +38,4 @@ for politica in /sys/devices/system/cpu/cpufreq/policy*; do
 done
 ```
 
-Registrar a unidade da frequência reportada (kHz para `scaling_max_freq`) e associar os valores aos nós. Consultar os manuais existentes para localizar configurações efetivas. Revisar saídas de diagnóstico que possam expor caminhos privados, nome de usuário, endereços ou opções sensíveis.
+Associe os valores aos nós e registre a unidade de `scaling_max_freq` em kHz. Revise as saídas antes de compartilhá-las para evitar expor caminhos privados, nomes de usuário, endereços ou opções sensíveis.

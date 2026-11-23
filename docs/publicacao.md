@@ -45,28 +45,9 @@ Para citar o estudo, use o registro bibliográfico oficial do TCC quando estiver
 
 A autoria bibliográfica, o ano de defesa e a referência oficial do TCC ainda precisam ser confirmados. Com esses dados, preparar e validar o `CITATION.cff` com os nomes das pessoas autoras, ORCID quando disponível, título, versão, data e endereço do artefato. [Arquivos de citação no GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
 
-## Git e sequência de commits
-
-A primeira publicação em `main` agrupa as alterações na seguinte sequência:
-
-1. `chore: definir exclusões e preservar bytes dos artefatos` para `.gitignore` e `.gitattributes`.
-2. `data: preservar registros e resultados da campanha NPB` para os originais da seleção, os resultados processados, os manifestos e as figuras de referência.
-3. `feat: incluir auditoria, visualizações e verificação de integridade` para código, testes existentes e dependências fixadas.
-4. `docs: documentar o cluster H7 e a reprodução do estudo` para o manual, o hostfile recuperado, o protocolo, a proveniência do NPB e o README.
-5. `chore: registrar manifesto SHA-256 da versão pública` para o `SHA256SUMS`.
-
 ## Checklist da futura Release
 
-- [x] Simular a seleção do Git e conferir a exclusão do acervo local e dos snapshots restritos.
-- [x] Conferir o conjunto local, reproduzir as tabelas e figuras arquivadas e verificar a integridade dos originais.
-- [x] Conferir o SHA-256 e os avisos da distribuição oficial do NPB.
-- [ ] Confirmar autoria, licenças e dados de citação aplicáveis ao conjunto final.
-- [x] Obter autorização para enviar a seleção ao repositório público.
-- [x] Gerar e conferir o manifesto SHA-256 dos arquivos distribuídos na publicação inicial.
-- [ ] Repetir a triagem quando a Release incluir arquivos adicionais.
-
-## Procedimento futuro
-
-1. Confirmar os dados de citação, os avisos e as licenças da versão para a Release.
-2. Marcar a versão aprovada com uma tag anotada. Registrar a campanha, o commit, as versões do ambiente, o recorte de dados distribuído e as lacunas de reprodução.
-3. Conferir uma cópia do conjunto final com o manifesto de distribuição e publicar a Release autorizada.
+- [ ] Confirmar autoria, licenças, avisos e dados de citação.
+- [ ] Conferir a seleção, as exclusões e o manifesto SHA-256 da versão.
+- [ ] Registrar a campanha, o commit, o ambiente e os limites de reprodução.
+- [ ] Confirmar a autorização para publicar a versão.
