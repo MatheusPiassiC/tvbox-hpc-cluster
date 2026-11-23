@@ -4,7 +4,7 @@
 
 Os manifestos originais identificam os 32 arquivos de entrada, os artefatos da auditoria e a versão do código. Em `dados_entrada.json`, os caminhos que começam em `raw/` são relativos a `results/` nesta árvore. Em `artefatos.json`, os caminhos são relativos a `results/processed/auditoria/`. Em `reproducibilidade.json`, os caminhos do código são relativos a `scripts/analise/auditoria-npb/`. [Manifestos arquivados](../results/processed/auditoria/manifestos/)
 
-Os oito conjuntos de coleta estão identificados pelo benchmark e pelo identificador `experimento_id`. As datas, as assinaturas declaradas do coletor, dos binários e da compilação e as opções registradas constam de [`ambientes.csv`](../results/processed/auditoria/tabelas/ambientes.csv). O SHA-256 do hostfile recuperado coincide com o registrado nessa tabela.
+Os oito conjuntos de coleta estão identificados pelo benchmark e pelo identificador `experimento_id`. As datas, as assinaturas declaradas do coletor, dos binários e da compilação e as opções registradas constam de `ambientes.csv`. O manifesto de proveniência registra a conferência dos arquivos recuperados contra essas assinaturas. [Ambiente por campanha](../results/processed/auditoria/tabelas/ambientes.csv) · [Proveniência da campanha](proveniencia-npb.md)
 
 Use `estado_entrada_sha256` para identificar o conjunto de dados e `codigo_sha256` para identificar a versão do código da auditoria. O manifesto de reprodução também registra o Python e as versões das dependências. [Manifesto de reprodução](../results/processed/auditoria/manifestos/reproducibilidade.json)
 
@@ -53,4 +53,26 @@ O inventário de tentativas pode ser mantido em um arquivo JSON separado por cam
 
 ## Manifesto SHA-256
 
-Para cada conjunto aprovado para publicação, gerar `SHA256SUMS` na raiz do conjunto. Incluir os arquivos distribuídos, inclusive anexos, usando caminhos relativos e excluindo o próprio manifesto. A partir do diretório que contém os arquivos selecionados, passar a lista explícita de caminhos ao GNU Coreutils `sha256sum --` e redirecionar a saída a `SHA256SUMS`. Verificar a cópia final desse mesmo diretório com `sha256sum --check --strict SHA256SUMS`. Para conjuntos com layouts diferentes, publicar um manifesto por conjunto e descrever seu diretório de referência nas notas da Release.
+Gere `SHA256SUMS` a partir da raiz do conjunto. Para a seleção da integração de 23/11/2026, combine os caminhos versionados com os quatro destinos novos explicitamente selecionados. O comando ordena os caminhos por byte, remove duplicatas e exclui o próprio manifesto. A lista explícita permite conferir os novos arquivos antes do stage.
+
+```bash
+(
+    set -euo pipefail
+    manifesto=$(mktemp .SHA256SUMS.XXXXXXXX)
+    trap 'rm -f -- "$manifesto"' EXIT
+    {
+        git ls-files -z -- . ':(exclude,top)SHA256SUMS'
+        printf '%s\0' \
+            config/npb/make.def \
+            docs/custos.md \
+            metadata/proveniencia-npb.md \
+            scripts/coleta/npb-experimento-v5.4.sh
+    } | LC_ALL=C sort -zu | xargs -0 -r sha256sum -- > "$manifesto"
+    sha256sum --check --strict --quiet "$manifesto"
+    chmod --reference=SHA256SUMS "$manifesto"
+    mv -- "$manifesto" SHA256SUMS
+)
+sha256sum --check --strict SHA256SUMS
+```
+
+Para uma seleção futura, ajuste a lista de destinos novos à versão aprovada. Se a distribuição tiver layouts diferentes, gere um manifesto por conjunto e registre o diretório de referência nas notas da Release.

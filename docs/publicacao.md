@@ -4,19 +4,24 @@ O acervo público está disponível no GitHub. [Repositório do TCC](https://git
 
 ## Seleção e armazenamento
 
+A tabela registra os destinos da seleção local revisada.
+
 | Material | Destino |
 | --- | --- |
 | 24 originais revisados | Git. Oito CSVs de planos, oito CSVs de medições e oito TXTs de saída MPI/NPB. |
 | Código, configurações documentadas, tabelas, gráficos e manifestos | Git. Os arquivos versionados mantêm os caminhos usados para consulta e geração das figuras. |
+| Coletor v5.4 e `make.def` originais | Seleção local para Git, com os bytes preservados e as assinaturas conferidas contra os snapshots. O hostfile idêntico já está versionado. [Proveniência](../metadata/proveniencia-npb.md) |
 | Oito snapshots `*_ambiente.txt` e manual original | Acervo local restrito. Os snapshots contêm identificadores de interfaces. O manual inclui parâmetros de rede substituídos por campos de preenchimento na cópia em `docs/`. |
-| Ambientes Python, caches, imagem de sistema, binários compilados e saídas de reprocessamento | Fora da seleção inicial. As saídas de verificação e o acervo local ficam sob `.local/`. |
-| Pacote NPB de terceiros | Download oficial da NASA, acompanhado do SHA-256 verificado no [guia do NPB](../benchmarks/README.md). |
+| Resgate, binários ARM, Makefiles do NPB e variantes históricas do coletor | Acervo local restrito. A configuração de exclusão local protege `resgate-tvbox/`. |
+| Pacote-fonte NPB | Cópia recuperada mantida no acervo. A publicação aponta para a NASA e registra o SHA-256 no [guia do NPB](../benchmarks/README.md). |
+| Imagem Armbian H7 | Referência ao CRC-Lavras. A imagem instalada carece de hash e inventário de redistribuição. [Origem da imagem-base](ambiente-software.md#imagem-base-para-h7) |
+| Ambientes Python, caches e saídas de reprocessamento | Uso local. O relatório de execução e as saídas locais de verificação ficam fora da seleção. |
 
 Os arquivos distribuídos ocupam cerca de 32 MiB. O maior arquivo, `comparativo_A_tempo_absoluto.png`, ocupa 1,91 MiB. O Git convencional comporta os dados e gráficos desta versão. O GitHub emite aviso acima de 50 MiB e bloqueia arquivos acima de 100 MiB no Git convencional. [Limites de arquivos do GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 
 O recorte público permite consultar as 460 tentativas e gerar novamente as figuras a partir das tabelas processadas. Reprocessar a auditoria completa a partir dos originais requer acesso ao conjunto local de 32 arquivos. As referências por linha aos snapshots nos relatórios arquivados também requerem acesso à cópia local. [Dados experimentais](../results/README.md) · [Reprodução da análise](../metadata/README.md#resultado-da-reprodução)
 
-O `.gitignore` exclui os originais restritos e os produtos locais. O `.gitattributes` mantém os bytes dos registros e dos artefatos da auditoria e define LF para os demais arquivos de texto. A cópia pública pode ser conferida a partir da raiz com:
+O `.gitignore` exclui os snapshots restritos e os produtos locais. O `.gitattributes` mantém os bytes dos registros, dos artefatos de auditoria e das cópias históricas de configuração e coleta. A cópia pública pode ser conferida a partir da raiz com o comando abaixo. [Regeneração do manifesto](../metadata/README.md#manifesto-sha-256)
 
 ```sh
 sha256sum --check --strict SHA256SUMS

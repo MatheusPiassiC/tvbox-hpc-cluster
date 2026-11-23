@@ -33,6 +33,24 @@ O endereço `10.0.0.102` atribuído a `node2` no diagrama e na reserva de exempl
 
 O MPI ocupa até quatro slots por nó na ordem do hostfile, com afinidade por núcleo. O exemplo `hello.c` do manual verifica a infraestrutura. Os comandos da campanha e os registros por rank estão descritos no [protocolo experimental](protocolo-experimental.md).
 
+## Inspeção de 23/11/2026
+
+No registro do pesquisador, o `server` tinha `eth0=10.0.0.100/24`, rota da rede interna por `eth0` e rota padrão via `192.168.1.1` em `wlan0`. O valor de `net.ipv4.ip_forward` era `1`. A leitura das regras efetivas de NAT exigiu privilégio e ficou pendente. Os oito nós MPI negociaram 100 Mb/s em full-duplex. [Arquitetura](arquitetura.md) · [Hardware](hardware.md)
+
+Em `nfs` (`10.0.0.99`), o arquivo `/etc/exports` registrava a exportação abaixo.
+
+```text
+/home/minipc/nfs 10.0.0.0/24(rw,sync,no_subtree_check)
+```
+
+As montagens observadas nos clientes usavam NFSv3 sobre TCP, opção `hard` e `rsize=wsize=262144` bytes. O `/etc/fstab` do `server` tinha uma entrada antiga comentada e a entrada ativa abaixo, com automontagem.
+
+```text
+10.0.0.99:/home/minipc/nfs /home/minipc/nfs nfs rw,sync,hard,vers=3,_netdev,nofail,x-systemd.automount,x-systemd.mount-timeout=30 0 0
+```
+
+A consulta `exportfs -v` encontrou uma restrição de permissão. O diretório `/usr/sbin` estava fora do `PATH` do usuário e `showmount` ficou sem execução. O registro das montagens remotas sustenta a identificação do protocolo e das opções dos clientes.
+
 ## Conferência da instalação
 
 | Verificação | Evidência esperada |
@@ -44,4 +62,4 @@ O MPI ocupa até quatro slots por nó na ordem do hostfile, com afinidade por n�
 
 O [guia de integração](GUIA_DE_INTEGRACAO.md#informações-a-extrair-do-ambiente) reúne as consultas de leitura para registrar essas condições por nó.
 
-Consulte as [configurações preservadas](../config/README.md), o [inventário de software](ambiente-software.md) e as notas sobre [hwloc e DRM](investigacoes/correcao-hwloc-drm.md) e [frequência da CPU](investigacoes/politica-frequencia-cpu.md). O acervo disponível ainda carece da imagem usada, dos arquivos completos de serviços e da evidência da intervenção em hwloc/DRM.
+O acervo reúne o hostfile original e os trechos de configuração registrados. A identificação por hash da imagem usada, o conjunto integral de arquivos dos serviços e o registro da intervenção em hwloc/DRM ainda estão pendentes. [Configurações preservadas](../config/README.md) · [Inventário de software](ambiente-software.md) · [Frequência da CPU](investigacoes/politica-frequencia-cpu.md) · [hwloc e DRM](investigacoes/correcao-hwloc-drm.md)

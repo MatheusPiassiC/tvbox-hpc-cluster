@@ -1,9 +1,14 @@
 # Hardware
 
-O cluster utiliza nove TV Boxes H7 reaproveitadas, disponibilizadas pelo CRC-Lavras segundo o pesquisador. Os oito nós de cálculo oferecem 32 núcleos e o nono equipamento serve o NFS. Os snapshots registram quatro núcleos ARM Cortex-A55 e `MemTotal` de 1.868.128 kB por dispositivo.
+O cluster utiliza **nove TV Boxes H7** reaproveitadas, disponibilizadas pelo CRC-Lavras. Cada equipamento tem SoC Amlogic S905X3 e quatro núcleos ARM Cortex-A55. Os snapshots registram `MemTotal` de 1.868.128 kB por dispositivo. O `server` e `node1` a `node7` oferecem 32 slots MPI, quatro por nó. O nono equipamento, `nfs`, fornece armazenamento compartilhado. [Arquitetura](arquitetura.md) · [Hostfile](../config/mpi/cluster)
 
-O pesquisador confirmou **H7** como nome comercial e associou as unidades à plataforma Amlogic SM1/S905X3. O device tree usado na inicialização registra o modelo `SEI Robotics SEI610`, com identificadores de compatibilidade `seirobotics,sei610` e `amlogic,sm1`.
+H7 é o nome comercial. O device tree usado na inicialização registra a plataforma de firmware como `SEI Robotics SEI610`, com identificadores de compatibilidade `seirobotics,sei610` e `amlogic,sm1`. [Origem da imagem e versões](ambiente-software.md)
 
-O campo de inventário manual registra um switch Intelbras SG 2400 QR de 24 portas, com a grafia exata pendente de conferência na etiqueta. Os enlaces dos nove equipamentos foram registrados a 100 Mbit/s em full-duplex nos oito snapshots. A [tabela de ambiente por nó](../results/processed/auditoria/tabelas/nos_ambiente.csv) contém esses registros.
+| Componente | Inventário |
+| --- | --- |
+| Switch | Intelbras SG 2400 QR, 24 portas Gigabit |
+| Cabeamento | Nove cabos CAT6 de aproximadamente 1 m, totalizando 9 m de cabo e 18 conectores RJ45 |
+| Alimentação | Nove fontes originais de 5 V e 2 A nominais e dois protetores bivolt de seis tomadas |
+| Refrigeração e armazenamento | Equipamentos usados sem refrigeração adicional e sem mídia de armazenamento externa |
 
-O inventário ainda precisa identificar as mídias de armazenamento, as revisões de placa e os itens, valores, datas e fontes da análise de custos. Consulte também a [política de frequência](investigacoes/politica-frequencia-cpu.md).
+Os snapshots de abertura da campanha registram enlaces de 100 Mb/s em full-duplex nos nove equipamentos. Na inspeção de 23/11/2026, os oito nós MPI negociaram 100 Mb/s em full-duplex. A especificação Gigabit corresponde às portas do switch. Os valores das fontes são nominais e a avaliação não mediu o consumo elétrico. [Ambiente por nó](../results/processed/auditoria/tabelas/nos_ambiente.csv) · [Análise de custos](custos.md)

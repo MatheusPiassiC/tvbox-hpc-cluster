@@ -2,7 +2,9 @@
 
 # Os caminhos abaixo têm hashes conferidos na auditoria ou na reprodução.
 /config/mpi/cluster -text
+/config/npb/make.def -text
 /results/raw/** -text
 /results/processed/auditoria/** -text
 /scripts/analise/auditoria-npb/** -text
+/scripts/coleta/npb-experimento-v5.4.sh -text
 /reports/figures/visualizacoes_experimentais/** -text

@@ -1,6 +1,8 @@
 # Configurando o cluster 5.0
 
 > Manual de montagem do cluster fornecido pelo pesquisador. Esta cópia usa campos de preenchimento nas reservas DHCP e solicita a credencial do Wi-Fi de forma interativa. Preencha os campos com os dados da rede e dos equipamentos de sua instalação. Consulte a [configuração documentada](configuracao-cluster.md) para relacionar o procedimento às condições registradas na campanha.
+>
+> A montagem documentada usa TV Boxes H7. Os endereços de exemplo, a entrada simplificada de NFS e o procedimento de NAT descrevem o roteiro de instalação. As reservas dos snapshots e a entrada de automontagem observada em 23/11/2026 constam do [registro de configuração](configuracao-cluster.md#inspeção-de-23112026). A [proveniência da imagem-base](ambiente-software.md#imagem-base-para-h7) identifica a entrada H7 do CRC-Lavras.
 
 # Visão Geral
 

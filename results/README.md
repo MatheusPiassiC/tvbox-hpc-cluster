@@ -1,6 +1,6 @@
 # Resultados experimentais
 
-A série NPB 3.4.4 MPI, classe A, de 16 e 17 de novembro de 2026 contém oito conjuntos de coleta. Os 32 arquivos em [`raw/`](raw/) conservam os nomes e a organização da origem. Os planos somam 460 posições, e os CSVs de medições somam 460 tentativas. Há dez posições e dez tentativas por configuração em 46 configurações.
+A série NPB 3.4.4 MPI, classe A, de 16 e 17 de novembro de 2026 contém oito conjuntos de coleta. Na cópia local, os 32 arquivos em [`raw/`](raw/) conservam os nomes e a organização da origem. Os planos somam 460 posições, e os CSVs de medições registram 460 tentativas, todas válidas na auditoria. Há dez posições e dez tentativas por configuração em 46 configurações.
 
 ## Registros originais
 
@@ -14,6 +14,10 @@ A série NPB 3.4.4 MPI, classe A, de 16 e 17 de novembro de 2026 contém oito co
 Os oito snapshots originais de ambiente contêm identificadores de interfaces e ficam excluídos do versionamento. As ligações que apontam para suas linhas funcionam na cópia local com o conjunto completo.
 
 Os originais usam UTF-8 e quebras LF. Os CSVs usam vírgula como delimitador, ponto decimal e campos vazios para valores ausentes. Os horários do coletor usam ISO 8601 com deslocamento `-03:00`. Nos CSVs de medições, `np` é a quantidade de processos solicitada, `tempo_s` copia o tempo do NPB em segundos e `tempo_parede_s` guarda a duração externa de `mpirun`. [Dicionário dos arquivos brutos](processed/auditoria/relatorios/01_exploracao_dos_arquivos.md#formatos-e-campos)
+
+## Seleção da série SP
+
+A campanha principal usa `SP/npb_9_SP_A`, de 17/11/2026. O CSV registra 50 tentativas válidas, dez para cada valor de `np` (1, 4, 9, 16 e 25). Na reavaliação, plano, CSV, saída e snapshot coincidiram com os quatro SHA-256 do manifesto arquivado. A série identificada como `npb_8_SP_A` no inventário inicial está fora da seleção oficial e seus arquivos estavam ausentes do acervo reavaliado. [CSV de SP](raw/SP/npb_9_SP_A.csv) · [Plano de SP](raw/SP/npb_9_SP_A-plano.csv) · [Manifesto dos originais](processed/auditoria/manifestos/dados_entrada.json)
 
 ## Da tentativa ao resultado
 

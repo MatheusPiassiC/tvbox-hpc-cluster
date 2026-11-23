@@ -1,7 +1,7 @@
 \chapter{Repositório complementar}
 \label{ap:repositorio}
 
-O repositório reúne a documentação técnica do cluster de TV Boxes H7
+O repositório reúne a documentação técnica do cluster de nove TV Boxes H7
 reaproveitadas e os registros da campanha de desempenho. O acervo permite
 consultar a configuração avaliada e rastrear as medições que sustentam os
 resultados do trabalho. O repositório está disponível em
@@ -18,6 +18,8 @@ as referências às linhas dos arquivos de origem ligam cada medição à
 configuração correspondente. Os registros de ambiente que contêm
 identificadores de interfaces permanecem no acervo local.
 
+O repositório inclui o coletor original v5.4, o \texttt{make.def} e o
+hostfile, com hashes conferidos contra os registros das oito coletas.
 Os scripts de auditoria conciliam os planos, os registros do coletor e as
 saídas dos benchmarks. As análises usam o campo \texttt{Time in seconds}
 do NPB para calcular estatísticas descritivas, intervalos de confiança de
@@ -28,5 +30,5 @@ registram os hashes SHA-256 e as versões do código e das dependências.
 O reprocessamento do acervo local em um diretório separado reproduziu as
 tabelas da auditoria e as figuras arquivadas. A reprodução integral da
 análise requer acesso aos registros de ambiente. A repetição da campanha
-nas mesmas condições depende também da recuperação da imagem usada, do
-código do coletor v5.4 e dos arquivos integrais de compilação.
+no hardware requer o pacote oficial do NPB e a conferência da imagem
+Armbian efetivamente instalada e das dependências do ambiente.
